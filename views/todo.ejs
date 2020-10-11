@@ -3,20 +3,54 @@
 <html>
     <head>
         <title>Ma todolist</title>
+        <link rel="stylesheet" media="screen" type="text/css" href="main.css"/>
         <style>
             a {text-decoration: none; color: black;}
         </style>
     </head>
     <body>
-        <h1>Bonjour Voici ta magnifique todolist !</h1>
-        <ul>
-            <% todolist.forEach(function(todo, index){ %>
-                <li><a href="/suppr/<%= index %>">x</a> <%= todo %> </li>
-            <% }); %>
-        </ul>
-        <form action="/add/" method="post">
-            <input  type="text" name='newTask' id='newTask' placeholder="new task">
-            <button type="submit">add</button>
-        </form>
+        <section class="container">
+            <div class="heading">
+                <img class="heading__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/laptop.svg">
+                <h1 class="heading__title">Bonjour Voici ta magnifique todolist !</h1>
+            </div>
+            <form class="form" action="/add/" method="post">
+                <div>
+                    <label class="form__label" for="todo">~ une nouvelle tache ? ~</label>
+                    <input  class="form__input" type="text" name='newTask' id='newTask' placeholder="new task">
+                    <button class="button"><span>Submit</span></button>
+                </div>
+            </form>
+            <div>
+                <ul class="toDoList">
+                    <% todolist.forEach(function(todo, index){ %>
+                        <li><a href="/suppr/<%= index %>">x</a> <%= todo %> </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </section>
     </body>
 </html>
+
+<!-- <section class="container">
+    <div class="heading">
+      <img class="heading__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/laptop.svg">
+      <h1 class="heading__title">To-Do List</h1>
+    </div>
+    <form class="form">
+      <div>
+        <label class="form__label" for="todo">~ Today I need to ~</label>
+        <input class="form__input"
+             type="text" 
+             id="todo" 
+             name="to-do"
+             size="30"
+             required>
+        <button class="button"><span>Submit</span></button>
+      </div>
+    </form>
+    <div>
+      <ul class="toDoList">
+      </ul>
+    </div>
+  </section> -->

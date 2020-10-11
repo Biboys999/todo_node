@@ -6,6 +6,7 @@ var app = express()
 
 app.use(session({ secret: 'topsecret'}))
 
+app.use(express.static(`${__dirname}/public/css/`))
 app.use(function(req, res, next){
     if (typeof(req.session.todolist) == 'undefined') {
         req.session.todolist = []
