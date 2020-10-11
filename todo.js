@@ -17,6 +17,7 @@ app.get('/', function(req,res) {
     res.render('todo.ejs', {todolist: req.session.todolist})
     // console.log(req.session)
 })
+
 app.post('/add', urlencodedParser, function(req, res){
     if(req.body.newTask != ""){
         var value = req.session.todolist
@@ -25,17 +26,18 @@ app.post('/add', urlencodedParser, function(req, res){
     console.log(value)
     res.redirect('/')
 })
-app.get('/suppr/:id'), function(req, res){
+
+app.get('/suppr/:id', function(req, res){
     if(req.params.id != ""){
         var value = req.session.todolist
         value.splice(req.params.id, 1)
     }
     console.log(value)
     res.redirect('/')
-}
+})
 
 app.use(function(req, res, next){
     res.redirect('/');
 })
 
-.listen(8080, console.log('portail 8080 en marche'))
+app.listen(8080, console.log('portail 8080 en marche'))
