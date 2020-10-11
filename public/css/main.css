@@ -18,6 +18,7 @@ body {
     min-height: 100vh;
   }
 }
+
 .container {
   width: 100%;
   height: auto;
@@ -122,7 +123,9 @@ body {
 .toDoList li {
   position: relative;
   padding: 0.5rem;
+  list-style: none;
 }
-.toDoList li:hover {
+/* .toDoList li:hover {
   text-decoration: line-through wavy #24bffb;
-}
+} */
+a {text-decoration: none; color: black;}

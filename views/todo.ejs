@@ -4,9 +4,6 @@
     <head>
         <title>Ma todolist</title>
         <link rel="stylesheet" media="screen" type="text/css" href="main.css"/>
-        <style>
-            a {text-decoration: none; color: black;}
-        </style>
     </head>
     <body>
         <section class="container">
@@ -24,7 +21,7 @@
             <div>
                 <ul class="toDoList">
                     <% todolist.forEach(function(todo, index){ %>
-                        <li><a href="/suppr/<%= index %>">x</a> <%= todo %> </li>
+                        <li><a href="/suppr/<%= index %>">x &ensp;</a> <%= todo %> </li>
                     <% }); %>
                 </ul>
             </div>
